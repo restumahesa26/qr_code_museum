@@ -12,15 +12,14 @@ class HomeController extends Controller
     public function home()
     {
         $items = Tanggapan::where('status', '1')->get();
+        $items2 = Kategori::all();
 
-        return view('pages.home.home')->with(compact('items'));
+        return view('pages.home.home')->with(compact('items', 'items2'));
     }
 
     public function scan()
     {
-        $items = Kategori::all();
-
-        return view('pages.home.scan')->with(compact('items'));
+        return view('pages.home.scan');
     }
 
     public function about()

@@ -9,8 +9,7 @@
         </div>
         <div class="row g-4">
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <h5>Get In Touch</h5>
-                <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
+                <p  style="text-align: justify;" class="mb-4">Silahkan untuk memberikan Tanggapan atau Pesan berdasarkan penggunaan Scan QR-Code Museum Negeri Bengkulu pada Halaman ini. Terima Kasih</p>
                 <div class="d-flex align-items-center mb-3">
                     <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary" style="width: 50px; height: 50px;">
                         <i class="fa fa-map-marker-alt text-white"></i>
@@ -41,7 +40,7 @@
             </div>
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                 <iframe class="position-relative rounded w-100 h-100"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
+                    src="https://maps.google.com/maps?q=museum%20bengkulu&t=&z=17&ie=UTF8&iwloc=&output=embed"
                     frameborder="0" style="min-height: 300px; border:0;" allowfullscreen="" aria-hidden="false"
                     tabindex="0"></iframe>
             </div>
@@ -51,30 +50,50 @@
                     <div class="row g-3">
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="text" class="form-control @error('nama') is-invalid @enderror" id="name" placeholder="Nama" required name="nama">
+                                <input type="text" class="form-control @error('nama') is-invalid @enderror" id="name" placeholder="Nama" required name="nama" value="{{ old('nama') }}">
                                 <label for="name">Nama</label>
+                                @error('nama')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="text" class="form-control @error('no_telepon') is-invalid @enderror" id="No HP" placeholder="No HP" required name="no_telepon">
+                                <input type="text" class="form-control @error('no_telepon') is-invalid @enderror" id="No HP" placeholder="No HP" required name="no_telepon" value="{{ old('no_telepon') }}">
                                 <label for="subject">No HP</label>
+                                @error('no_telepon')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-floating">
-                                <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="Email" required name="email">
+                                <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="Email" required name="email" value="{{ old('email') }}">
                                 <label for="email">Email</label>
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-floating">
-                                <textarea class="form-control @error('pesan') is-invalid @enderror" placeholder="Tinggalkan Pesan" id="Pesan" style="height: 150px" required name="pesan"></textarea>
-                                <label for="message">Testimoni</label>
+                                <textarea class="form-control @error('pesan') is-invalid @enderror" placeholder="Tinggalkan Testimoni" id="pesan" style="height: 150px" required name="pesan">{{ old('pesan') }}</textarea>
+                                <label for="pesan">Pesan</label>
+                                @error('pesan')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
                         <div class="col-12">
-                            <button class="btn btn-primary w-100 py-3" type="submit">Kirim Testimoni</button>
+                            <button class="btn btn-primary w-100 py-3" type="submit">Kirim Pesan</button>
                         </div>
                     </div>
                 </form>

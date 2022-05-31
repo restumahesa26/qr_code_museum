@@ -546,7 +546,6 @@
                 e.preventDefault();
             });
         });
-
     </script>
     <script>
         $( document ).ready(function() {

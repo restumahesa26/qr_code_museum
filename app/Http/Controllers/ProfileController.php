@@ -44,6 +44,6 @@ class ProfileController extends Controller
         $item->save();
 
         // Kembali ke halaman profile
-        return redirect()->route('profile.edit');
+        return redirect()->route('profile.edit')->with('success', 'Berhasil Mengubah Profile');
     }
 }

@@ -13,7 +13,7 @@
         <div class="navbar-nav ms-auto p-4 p-lg-0">
             <a href="{{ route('home') }}" class="nav-item nav-link @if(Route::is('home')) active @endif">Home</a>
             <a href="{{ route('scan') }}" class="nav-item nav-link @if(Route::is('scan')) active @endif">Scan</a>
-            <a href="{{ route('about-us') }}" class="nav-item nav-link @if(Route::is('about-us')) active @endif">Testimoni</a>
+            <a href="{{ route('about-us') }}" class="nav-item nav-link @if(Route::is('about-us')) active @endif">Contact Us</a>
             @if (Auth::user())
             <a href="{{ route('dashboard') }}" class="nav-item nav-link @if(Route::is('dashboard')) active @endif">Dashboard</a>
             <form method="POST" action="{{ route('logout') }}">
