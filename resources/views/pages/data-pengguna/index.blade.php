@@ -12,7 +12,7 @@
                     Tambah Data Pengguna
                 </a>
                 <div class="table-responsive">
-                    <table class="table text-nowrap table-bordered">
+                    <table class="table text-nowrap table-bordered" id="dataTable">
                         <thead>
                             <tr>
                                 <th>No</th>
@@ -54,10 +54,21 @@
 
 @push('addon-style')
     <link rel="stylesheet" href="{{ url('css/sweetalert2.min.css') }}">
+    <link rel="stylesheet" href="{{ url('backend/assets/modules/datatables/datatables.min.css') }}">
+    <link rel="stylesheet" href="{{ url('backend/assets/modules/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css') }}">
 @endpush
 
 @push('addon-script')
     <script src="{{ url('js/sweetalert2.all.min.js') }}"></script>
+    <script src="{{ url('backend/assets/modules/datatables/datatables.min.js') }}"></script>
+    <script src="{{ url('backend/assets/modules/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js') }}"></script>
+    <script>
+        $("#dataTable").dataTable({
+            "columnDefs": [
+                { "sortable": false}
+            ]
+        });
+    </script>
     <script>
         $('.btn-hapus').on('click', function (e) {
             e.preventDefault(); // prevent form submit
