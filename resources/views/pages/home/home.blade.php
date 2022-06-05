@@ -81,7 +81,7 @@
         <div class="owl-carousel testimonial-carousel position-relative">
             @foreach ($items as $item)
             <div class="testimonial-item text-center">
-                <img class="border rounded-circle p-2 mx-auto mb-3" src="{{ url('backend/assets/img/avatar/avatar-1.png') }}">
+                <img class="border rounded-circle p-2 mx-auto mb-3" src="{{ url('backend/assets/img/avatar/avatar-1.png') }}" style="width: 80px; height: 80px;">
                 <h5 class="mb-0">{{ $item->nama }}</h5>
                 <p>Pengunjung Museum</p>
                 <div class="testimonial-text bg-light text-center p-4">
