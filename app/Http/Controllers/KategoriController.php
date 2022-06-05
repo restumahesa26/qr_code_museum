@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Kategori;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class KategoriController extends Controller
 {
@@ -42,11 +44,19 @@ class KategoriController extends Controller
         $request->validate([
             'kode' => ['required', 'string', 'max:255', 'unique:kategoris'],
             'nama' => ['required', 'string', 'max:255'],
+            'foto' => ['required', 'mimes:png,jpg'],
         ]);
+
+        $extension = $request->file('foto')->extension();
+        $imageNames = uniqid('img_', microtime()) . '.' . $extension;
+        Storage::putFileAs('public/images/gambar-kategori', $request->file('foto'), $imageNames);
+        $thumbnailpath = storage_path('app/public/images/gambar-kategori/' . $imageNames);
+        Image::make($thumbnailpath)->resize(600, 450)->save($thumbnailpath);
 
         Kategori::create([
             'kode' => $request->kode,
             'nama' => $request->nama,
+            'foto' => $imageNames,
         ]);
 
         return redirect()->route('data-kategori.index')->with('success', 'Berhasil Menambah Kategori');
@@ -98,9 +108,26 @@ class KategoriController extends Controller
                 'kode' => ['required', 'string', 'max:255', 'unique:kategoris'],
             ]);
         }
+        if ($request->foto) {
+            $request->validate([
+                'foto' => ['required', 'mimes:png,jpg'],
+            ]);
+
+            $filename  = ('public/images/gambar-kategori/').$item->foto;
+            Storage::delete($filename);
+
+            $extension = $request->file('foto')->extension();
+            $imageNames = uniqid('img_', microtime()) . '.' . $extension;
+            Storage::putFileAs('public/images/gambar-kategori', $request->file('foto'), $imageNames);
+            $thumbnailpath = storage_path('app/public/images/gambar-kategori/' . $imageNames);
+            Image::make($thumbnailpath)->resize(600, 450)->save($thumbnailpath);
+        }else {
+            $imageNames = $item->foto;
+        }
 
         $item->kode = $request->kode;
         $item->nama = $request->nama;
+        $item->foto = $imageNames;
         $item->save();
 
         return redirect()->route('data-kategori.index')->with('success', 'Berhasil Mengubah Kategori');
@@ -115,6 +142,9 @@ class KategoriController extends Controller
     public function destroy($id)
     {
         $item = Kategori::findOrFail($id);
+
+        $filename  = ('public/images/gambar-kategori/').$item->foto;
+        Storage::delete($filename);
 
         $item->delete();
 

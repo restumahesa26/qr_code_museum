@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Login &mdash; Stisla</title>
+  <title>Login </title>
+  <link rel="icon" type="image/x-icon" href="{{ url('logo.png') }}" />
 
   @include('includes.style')
 <!-- Start GA -->

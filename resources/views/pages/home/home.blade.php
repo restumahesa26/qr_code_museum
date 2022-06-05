@@ -59,7 +59,7 @@
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="course-item bg-light">
                     <div class="position-relative overflow-hidden">
-                        <img class="img-fluid" src="{{ url('frontend/img/course-1.jpg') }}" alt="">
+                        <img class="" src="{{ asset('storage/images/gambar-kategori/' . $item->foto) }}" alt="" style="width: 100%">
                     </div>
                     <div class="text-center p-4 pb-2">
                         <h5 class="mb-4">{{ $item->nama }}</h5>
@@ -81,7 +81,7 @@
         <div class="owl-carousel testimonial-carousel position-relative">
             @foreach ($items as $item)
             <div class="testimonial-item text-center">
-                <img class="border rounded-circle p-2 mx-auto mb-3" src="{{ url('backend/assets/img/avatar/avatar-1.png') }}" style="width: 80px; height: 80px;">
+                <img class="border rounded-circle p-2 mx-auto mb-3" src="{{ url('backend/assets/img/avatar/avatar-1.png') }}">
                 <h5 class="mb-0">{{ $item->nama }}</h5>
                 <p>Pengunjung Museum</p>
                 <div class="testimonial-text bg-light text-center p-4">
@@ -97,6 +97,14 @@
 
 @push('addon-style')
     <link rel="stylesheet" href="{{ url('css/sweetalert2.min.css') }}">
+    <style>
+        @media only screen and (max-width: 768px) {
+            /* For mobile phones: */
+            .img-fluid {
+                height: 500px;
+            }
+        }
+    </style>
 @endpush
 
 @push('addon-script')

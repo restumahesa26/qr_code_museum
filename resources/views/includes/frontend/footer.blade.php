@@ -13,27 +13,11 @@
                     <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
-            <div class="col-lg-3"></div>
-            <div class="col-lg-5 col-md-6">
-                <h4 class="text-white mb-3">Gallery</h4>
+            <div class="col-lg-2"></div>
+            <div class="col-lg-6 col-md-6">
                 <div class="row g-2 pt-2">
-                    <div class="col-4">
-                        <img class="img-fluid bg-light p-1" src="{{ url('frontend/img/course-1.jpg') }}" alt="">
-                    </div>
-                    <div class="col-4">
-                        <img class="img-fluid bg-light p-1" src="{{ url('frontend/img/course-2.jpg') }}" alt="">
-                    </div>
-                    <div class="col-4">
-                        <img class="img-fluid bg-light p-1" src="{{ url('frontend/img/course-3.jpg') }}" alt="">
-                    </div>
-                    <div class="col-4">
-                        <img class="img-fluid bg-light p-1" src="{{ url('frontend/img/course-2.jpg') }}" alt="">
-                    </div>
-                    <div class="col-4">
-                        <img class="img-fluid bg-light p-1" src="{{ url('frontend/img/course-3.jpg') }}" alt="">
-                    </div>
-                    <div class="col-4">
-                        <img class="img-fluid bg-light p-1" src="{{ url('frontend/img/course-1.jpg') }}" alt="">
+                    <div class="col-12">
+                        <img class="p-1 img-footer" src="{{ url('footer.png') }}" alt="" style="width: 100%">
                     </div>
                 </div>
             </div>
@@ -51,4 +35,3 @@
         </div>
     </div>
 </div>
-<!-- Footer End -->

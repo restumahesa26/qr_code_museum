@@ -16,6 +16,6 @@ class Kategori extends Model
     protected $keyType = 'string';
 
     protected $fillable = [
-        'kode', 'nama'
+        'kode', 'nama', 'foto'
     ];
 }

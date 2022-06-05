@@ -17,7 +17,7 @@
                                 <th>Email</th>
                                 <th>No Telepon</th>
                                 <th>Status</th>
-                                <th style="width: 25% !important;">Pesan</th>
+                                <th>Pesan</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -35,7 +35,11 @@
                                         <span class="badge badge-primary">Aktif</span>
                                     @endif
                                 </td>
-                                <td style="width: 25%">{{ $item->pesan }}</td>
+                                <td>
+                                    <button type="button" class="btn btn-info btn-sm ml-1" data-toggle="modal" data-target="#modal_pesan{{ $item->id }}">
+                                        Lihat Pesan
+                                    </button>
+                                </td>
                                 <td>
                                     @if ($item->status == '0')
                                     <a href="{{ route('data-tanggapan.edit', $item->id) }}" class="btn btn-sm btn-primary">Set Aktif</a>
@@ -59,6 +63,23 @@
                 </div>
             </div>
         </div>
+        @foreach ($items as $item2)
+        <div class="modal fade" id="modal_pesan{{ $item2->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Foto Koleksi</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        {!! $item->pesan !!}
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endforeach
     </div>
 </div>
 @endsection

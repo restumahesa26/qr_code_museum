@@ -9,6 +9,7 @@ use App\Models\SubKategori;
 use App\Models\Ukuran;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class KoleksiController extends Controller
 {
@@ -123,6 +124,8 @@ class KoleksiController extends Controller
             $extension = $value->extension();
             $imageNames = uniqid('img_', microtime()) . '.' . $extension;
             Storage::putFileAs('public/images/gambar-koleksi', $value, $imageNames);
+            $thumbnailpath = storage_path('app/public/images/gambar-koleksi/' . $imageNames);
+            Image::make($thumbnailpath)->resize(700, 550)->save($thumbnailpath);
             $foto[] = $imageNames;
         }
 
@@ -321,6 +324,8 @@ class KoleksiController extends Controller
                 $extension = $value->extension();
                 $imageNames = uniqid('img_', microtime()) . '.' . $extension;
                 Storage::putFileAs('public/images/gambar-koleksi', $value, $imageNames);
+                $thumbnailpath = storage_path('app/public/images/gambar-koleksi/' . $imageNames);
+                Image::make($thumbnailpath)->resize(700, 550)->save($thumbnailpath);
                 $foto[] = $imageNames;
             }
         }

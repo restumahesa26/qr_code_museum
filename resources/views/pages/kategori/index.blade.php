@@ -17,6 +17,7 @@
                             <tr>
                                 <th>Kode</th>
                                 <th>Nama</th>
+                                <th style="width: 30%">Foto</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -25,6 +26,9 @@
                             <tr>
                                 <td>{{ $item->kode }}</td>
                                 <td>{{ $item->nama }}</td>
+                                <td>
+                                    <img src="{{ asset('storage/images/gambar-kategori/' . $item->foto) }}" alt="" style="width: 100%">
+                                </td>
                                 <td>
                                     <a href="{{ route('data-kategori.edit', $item->kode) }}" class="btn btn-sm btn-primary">Ubah</a>
                                     <form action="{{ route('data-kategori.destroy', $item->kode) }}" method="post" class="d-inline">
@@ -62,7 +66,8 @@
         $("#dataTable").dataTable({
             "columnDefs": [
                 { "sortable": false}
-            ]
+            ],
+            "pageLength": 25
         });
     </script>
     <script>
