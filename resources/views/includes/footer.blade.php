@@ -1,6 +1,6 @@
 <footer class="main-footer">
     <div class="footer-left">
-        Copyright &copy; 2022 <div class="bullet"></div> Design & Developed By Rolin Sanjaya Tamba
+        &copy; <a class="border-bottom" href="#">Museum Negeri Bengkulu 2022</a>, All Right Reserved.
     </div>
     <div class="footer-right">
 

@@ -74,7 +74,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        {!! $item->pesan !!}
+                        {!! $item2->pesan !!}
                     </div>
                 </div>
             </div>

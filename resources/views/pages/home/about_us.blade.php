@@ -8,46 +8,13 @@
             <h1 class="mb-5">Kontak</h1>
         </div>
         <div class="row g-4">
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <p  style="text-align: justify;" class="mb-4">Silahkan untuk memberikan Tanggapan atau Pesan berdasarkan penggunaan Scan QR-Code Museum Negeri Bengkulu pada Halaman ini. Terima Kasih</p>
-                <div class="d-flex align-items-center mb-3">
-                    <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary" style="width: 50px; height: 50px;">
-                        <i class="fa fa-map-marker-alt text-white"></i>
-                    </div>
-                    <div class="ms-3">
-                        <h5 class="text-primary">Museum Negeri Bengkulu</h5>
-                        <p class="mb-0">Jl. Pembangunan No. 08, Gading Cempaka</p>
-                    </div>
-                </div>
-                <div class="d-flex align-items-center mb-3">
-                    <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary" style="width: 50px; height: 50px;">
-                        <i class="fa fa-phone-alt text-white"></i>
-                    </div>
-                    <div class="ms-3">
-                        <h5 class="text-primary">No Handphone</h5>
-                        <p class="mb-0"> (0736) 21620</p>
-                    </div>
-                </div>
-                <div class="d-flex align-items-center">
-                    <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary" style="width: 50px; height: 50px;">
-                        <i class="fa fa-envelope-open text-white"></i>
-                    </div>
-                    <div class="ms-3">
-                        <h5 class="text-primary">Email</h5>
-                        <p class="mb-0">dikbud.bengkuluprov@gmail.com</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <iframe class="position-relative rounded w-100 h-100"
-                    src="https://maps.google.com/maps?q=museum%20bengkulu&t=&z=17&ie=UTF8&iwloc=&output=embed"
-                    frameborder="0" style="min-height: 300px; border:0;" allowfullscreen="" aria-hidden="false"
-                    tabindex="0"></iframe>
-            </div>
             <div class="col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
                 <form action="{{ route('send-testimoni') }}" method="POST">
                     @csrf
                     <div class="row g-3">
+                        <div class="col-md-12">
+                            <h4>Ulasan</h4>
+                        </div>
                         <div class="col-md-6">
                             <div class="form-floating">
                                 <input type="text" class="form-control @error('nama') is-invalid @enderror" id="name" placeholder="Nama" required name="nama" value="{{ old('nama') }}">
@@ -93,10 +60,46 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <button class="btn btn-primary w-100 py-3" type="submit">Kirim Pesan</button>
+                            <button class="btn btn-primary w-100 py-3" type="submit">Kirim Ulasan</button>
                         </div>
                     </div>
                 </form>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <iframe class="position-relative rounded w-100 h-100"
+                    src="https://maps.google.com/maps?q=museum%20bengkulu&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                    frameborder="0" style="min-height: 300px; border:0;" allowfullscreen="" aria-hidden="false"
+                    tabindex="0"></iframe>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <p  style="text-align: justify;" class="mb-4">Terimakasih telah menggunakan aplikasi Scan Qr-Code Museum Negeri Kota Bengkulu, Ulasan yang anda berikan akan sangat bermanfaat dan membantu kami dalam melakukan pengembangan aplikasi Scan Qr-Code Museum Bengkulu.</p>
+                <div class="d-flex align-items-center mb-3">
+                    <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary" style="width: 50px; height: 50px;">
+                        <i class="fa fa-map-marker-alt text-white"></i>
+                    </div>
+                    <div class="ms-3">
+                        <h5 class="text-primary">Museum Negeri Bengkulu</h5>
+                        <p class="mb-0">Jl. Pembangunan No. 08, Gading Cempaka</p>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center mb-3">
+                    <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary" style="width: 50px; height: 50px;">
+                        <i class="fa fa-phone-alt text-white"></i>
+                    </div>
+                    <div class="ms-3">
+                        <h5 class="text-primary">No Handphone</h5>
+                        <p class="mb-0"> (0736) 21620</p>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary" style="width: 50px; height: 50px;">
+                        <i class="fa fa-envelope-open text-white"></i>
+                    </div>
+                    <div class="ms-3">
+                        <h5 class="text-primary">Email</h5>
+                        <p class="mb-0">dikbud.bengkuluprov@gmail.com</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

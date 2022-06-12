@@ -29,7 +29,7 @@
                     </div>
                     <div class="form-group">
                         <label for="kode">Kode Sub Kategori</label>
-                        <input type="number" class="form-control @error('kode') is-invalid @enderror" id="kode" name="kode" placeholder="Masukkan Kode Sub Kategori" value="{{ old('kode') }}" min="01" step="1" onchange="if(parseInt(this.value,10)<10)this.value='0'+this.value;">
+                        <input type="number" class="form-control @error('kode') is-invalid @enderror" id="kode" name="kode" placeholder="Masukkan Kode Sub Kategori" value="{{ old('kode') }}" min="01" step="1" >
                         @error('kode')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

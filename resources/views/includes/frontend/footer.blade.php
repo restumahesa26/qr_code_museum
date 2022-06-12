@@ -27,8 +27,7 @@
         <div class="copyright">
             <div class="row">
                 <div class="col-md-12 text-center mb-3 mb-md-0">
-                    &copy; <a class="border-bottom" href="#">Museum Negeri Bengkulu 2022</a>, All Right Reserved. Developed By <a class="border-bottom" href="https://htmlcodex.com">Rolin Sanjaya Tamba</a><br><br>
-                    Template By <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
+                    &copy; <a class="border-bottom" href="#">Museum Negeri Bengkulu 2022</a>, All Right Reserved.
                 </div>
                 </div>
             </div>

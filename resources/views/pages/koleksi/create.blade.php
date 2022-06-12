@@ -12,10 +12,10 @@
             <div class="card">
                 <div class="card-body">
                     <div class="form-row">
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="form-group">
-                                <label for="nomor_inventaris">Nomor Inventaris</label>
-                                <input type="string" class="form-control @error('nomor_inventaris') is-invalid @enderror" id="nomor_inventaris" name="nomor_inventaris" placeholder="Masukkan Nomor Inventaris" value="{{ old('nomor_inventaris') }}">
+                                <label for="nomor_inventaris">Nomor Inventaris Baru</label>
+                                <input type="string" class="form-control @error('nomor_inventaris') is-invalid @enderror" id="nomor_inventaris" name="nomor_inventaris" placeholder="Masukkan Nomor Inventaris Baru" value="{{ old('nomor_inventaris') }}">
                                 @error('nomor_inventaris')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -23,7 +23,18 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="nomor_seri">Nomor Seri</label>
+                                <input type="text" class="form-control @error('nomor_seri') is-invalid @enderror" id="nomor_seri" name="nomor_seri" placeholder="Masukkan Nomor Seri" value="{{ old('nomor_seri') }}">
+                                @error('nomor_seri')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-md-3">
                             <div class="form-group">
                                 <label for="nomor_koleksi_lama_registrasi">Nomor Koleksi Lama Registrasi</label>
                                 <input type="text" class="form-control @error('nomor_koleksi_lama_registrasi') is-invalid @enderror" id="nomor_koleksi_lama_registrasi" name="nomor_koleksi_lama_registrasi" placeholder="Masukkan Nomor Koleksi Lama Registrasi" value="{{ old('nomor_koleksi_lama_registrasi') }}">
@@ -34,7 +45,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="form-group">
                                 <label for="nomor_koleksi_lama_inventaris">Nomor Koleksi Lama Inventaris</label>
                                 <input type="text" class="form-control @error('nomor_koleksi_lama_inventaris') is-invalid @enderror" id="nomor_koleksi_lama_inventaris" name="nomor_koleksi_lama_inventaris" placeholder="Masukkan Nomor Koleksi Lama Inventaris" value="{{ old('nomor_koleksi_lama_inventaris') }}">
@@ -60,9 +71,9 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="klasifikasi">Klasifikasi</label>
+                                <label for="klasifikasi">Kategori</label>
                                 <select name="klasifikasi" id="klasifikasi" class="form-control @error('klasifikasi') is-invalid @enderror">
-                                    <option value="" hidden>-- Pilih Klasifikasi --</option>
+                                    <option value="" hidden>-- Pilih Kategori --</option>
                                     @foreach ($kategori as $item2)
                                         <option value="{{ $item2->kode }}" @if (old('klasifikasi') == $item2->kode)
                                             selected
@@ -73,9 +84,9 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="sub_klasifikasi">Sub Klasifikasi</label>
+                                <label for="sub_klasifikasi">Sub Kategori</label>
                                 <select name="sub_klasifikasi" id="sub_klasifikasi" class="form-control @error('sub_klasifikasi') is-invalid @enderror">
-                                    <option value="" hidden>Pilih Klasifikasi Terlebih Dahulu</option>
+                                    <option value="" hidden>Pilih Kategori Terlebih Dahulu</option>
                                     {{-- @foreach ($subKategori as $item2)
                                         <option value="{{ $item2->kode }}" @if (old('sub_klasifikasi') == $item2->kode)
                                             selected
@@ -147,8 +158,8 @@
                     <div class="form-row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="ciri_khusus">Ciri Khusus</label>
-                                <input type="text" class="form-control @error('ciri_khusus') is-invalid @enderror" id="ciri_khusus" name="ciri_khusus" placeholder="Masukkan Ciri Khusus" value="{{ old('ciri_khusus') }}">
+                                <label for="ciri_khusus">Ciri Khusus / Bentuk</label>
+                                <input type="text" class="form-control @error('ciri_khusus') is-invalid @enderror" id="ciri_khusus" name="ciri_khusus" placeholder="Masukkan Ciri Khusus / Bentuk" value="{{ old('ciri_khusus') }}">
                                 @error('ciri_khusus')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -304,7 +315,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="ukuran_naskah">Ukuran Naskah</label>
-                                        <input type="number" class="form-control @error('ukuran_naskah') is-invalid @enderror" id="ukuran_naskah" name="ukuran_naskah" placeholder="Masukkan Ukuran Naskah" value="{{ old('ukuran_naskah') }}" step="0.1" min="0">
+                                        <input type="text" class="form-control @error('ukuran_naskah') is-invalid @enderror" id="ukuran_naskah" name="ukuran_naskah" placeholder="Masukkan Ukuran Naskah" value="{{ old('ukuran_naskah') }}" step="0.01" min="0">
                                         @error('ukuran_naskah')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -315,7 +326,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="jumlah_halaman">Jumlah Halaman</label>
-                                        <input type="number" class="form-control @error('jumlah_halaman') is-invalid @enderror" id="jumlah_halaman" name="jumlah_halaman" placeholder="Masukkan Jumlah Halaman" value="{{ old('jumlah_halaman') }}" min="1">
+                                        <input type="text" class="form-control @error('jumlah_halaman') is-invalid @enderror" id="jumlah_halaman" name="jumlah_halaman" placeholder="Masukkan Jumlah Halaman" value="{{ old('jumlah_halaman') }}" min="1">
                                         @error('jumlah_halaman')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -326,7 +337,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="jumlah_baris">Jumlah Baris</label>
-                                        <input type="number" class="form-control @error('jumlah_baris') is-invalid @enderror" id="jumlah_baris" name="jumlah_baris" placeholder="Masukkan Jumlah Baris" value="{{ old('jumlah_baris') }}" min="1">
+                                        <input type="text" class="form-control @error('jumlah_baris') is-invalid @enderror" id="jumlah_baris" name="jumlah_baris" placeholder="Masukkan Jumlah Baris" value="{{ old('jumlah_baris') }}" min="1">
                                         @error('jumlah_baris')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -352,139 +363,139 @@
                                 <tr>
                                     <th>Ukuran</th>
                                     <td>
-                                        <input type="number" name="panjang_ukuran" id="panjang_ukuran" class="form-control" placeholder="CM" step="0.1" min="0">
+                                        <input type="number" name="panjang_ukuran" id="panjang_ukuran" class="form-control" placeholder="CM" step="0.01" min="0" value={{ old('panjang_ukuran') }}>
                                     </td>
                                     <td>
-                                        <input type="number" name="lebar_ukuran" id="lebar_ukuran" class="form-control" placeholder="CM" step="0.1" min="0">
+                                        <input type="number" name="lebar_ukuran" id="lebar_ukuran" class="form-control" placeholder="CM" step="0.01" min="0" value={{ old('lebar_ukuran') }}>
                                     </td>
                                     <td>
-                                        <input type="number" name="tinggi_ukuran" id="tinggi_ukuran" class="form-control" placeholder="CM" step="0.1" min="0">
+                                        <input type="number" name="tinggi_ukuran" id="tinggi_ukuran" class="form-control" placeholder="CM" step="0.01" min="0" value={{ old('tinggi_ukuran') }}>
                                     </td>
                                     <td>
-                                        <input type="number" name="tebal_ukuran" id="tebal_ukuran" class="form-control" placeholder="CM" step="0.1" min="0">
+                                        <input type="number" name="tebal_ukuran" id="tebal_ukuran" class="form-control" placeholder="CM" step="0.01" min="0" value={{ old('tebal_ukuran') }}>
                                     </td>
                                     <td>
-                                        <input type="number" name="diameter_ukuran" id="diameter_ukuran" class="form-control" placeholder="CM" step="0.1" min="0">
+                                        <input type="number" name="diameter_ukuran" id="diameter_ukuran" class="form-control" placeholder="CM" step="0.01" min="0" value={{ old('diameter_ukuran') }}>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Badan</th>
                                     <td>
-                                        <input type="number" name="panjang_badan" id="panjang_badan" class="form-control" placeholder="CM" step="0.1" min="0">
+                                        <input type="number" name="panjang_badan" id="panjang_badan" class="form-control" placeholder="CM" step="0.01" min="0" value={{ old('panjang_badan') }}>
                                     </td>
                                     <td>
-                                        <input type="number" name="lebar_badan" id="lebar_badan" class="form-control" placeholder="CM" step="0.1" min="0">
+                                        <input type="number" name="lebar_badan" id="lebar_badan" class="form-control" placeholder="CM" step="0.01" min="0" value={{ old('lebar_badan') }}>
                                     </td>
                                     <td>
-                                        <input type="number" name="tinggi_badan" id="tinggi_badan" class="form-control" placeholder="CM" step="0.1" min="0">
+                                        <input type="number" name="tinggi_badan" id="tinggi_badan" class="form-control" placeholder="CM" step="0.01" min="0" value={{ old('tinggi_badan') }}>
                                     </td>
                                     <td>
-                                        <input type="number" name="tebal_badan" id="tebal_badan" class="form-control" placeholder="CM" step="0.1" min="0">
+                                        <input type="number" name="tebal_badan" id="tebal_badan" class="form-control" placeholder="CM" step="0.01" min="0" value={{ old('tebal_badan') }}>
                                     </td>
                                     <td>
-                                        <input type="number" name="diameter_badan" id="diameter_badan" class="form-control" placeholder="CM" step="0.1" min="0">
+                                        <input type="number" name="diameter_badan" id="diameter_badan" class="form-control" placeholder="CM" step="0.01" min="0" value={{ old('diameter_badan') }}>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Alas</th>
                                     <td>
-                                        <input type="number" name="panjang_alas" id="panjang_alas" class="form-control" placeholder="CM" step="0.1" min="0">
+                                        <input type="number" name="panjang_alas" id="panjang_alas" class="form-control" placeholder="CM" step="0.01" min="0" value={{ old('panjang_alas') }}>
                                     </td>
                                     <td>
-                                        <input type="number" name="lebar_alas" id="lebar_alas" class="form-control" placeholder="CM" step="0.1" min="0">
+                                        <input type="number" name="lebar_alas" id="lebar_alas" class="form-control" placeholder="CM" step="0.01" min="0" value={{ old('lebar_alas') }}>
                                     </td>
                                     <td>
-                                        <input type="number" name="tinggi_alas" id="tinggi_alas" class="form-control" placeholder="CM" step="0.1" min="0">
+                                        <input type="number" name="tinggi_alas" id="tinggi_alas" class="form-control" placeholder="CM" step="0.01" min="0" value={{ old('tinggi_alas') }}>
                                     </td>
                                     <td>
-                                        <input type="number" name="tebal_alas" id="tebal_alas" class="form-control" placeholder="CM" step="0.1" min="0">
+                                        <input type="number" name="tebal_alas" id="tebal_alas" class="form-control" placeholder="CM" step="0.01" min="0" value={{ old('tebal_alas') }}>
                                     </td>
                                     <td>
-                                        <input type="number" name="diameter_alas" id="diameter_alas" class="form-control" placeholder="CM" step="0.1" min="0">
+                                        <input type="number" name="diameter_alas" id="diameter_alas" class="form-control" placeholder="CM" step="0.01" min="0" value={{ old('diameter_alas') }}>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Mulut / Bibir</th>
                                     <td>
-                                        <input type="number" name="panjang_mulut" id="panjang_mulut" class="form-control" placeholder="CM" step="0.1" min="0">
+                                        <input type="number" name="panjang_mulut" id="panjang_mulut" class="form-control" placeholder="CM" step="0.01" min="0" value={{ old('panjang_mulut') }}>
                                     </td>
                                     <td>
-                                        <input type="number" name="lebar_mulut" id="lebar_mulut" class="form-control" placeholder="CM" step="0.1" min="0">
+                                        <input type="number" name="lebar_mulut" id="lebar_mulut" class="form-control" placeholder="CM" step="0.01" min="0" value={{ old('lebar_mulut') }}>
                                     </td>
                                     <td>
-                                        <input type="number" name="tinggi_mulut" id="tinggi_mulut" class="form-control" placeholder="CM" step="0.1" min="0">
+                                        <input type="number" name="tinggi_mulut" id="tinggi_mulut" class="form-control" placeholder="CM" step="0.01" min="0" value={{ old('tinggi_mulut') }}>
                                     </td>
                                     <td>
-                                        <input type="number" name="tebal_mulut" id="tebal_mulut" class="form-control" placeholder="CM" step="0.1" min="0">
+                                        <input type="number" name="tebal_mulut" id="tebal_mulut" class="form-control" placeholder="CM" step="0.01" min="0" value={{ old('tebal_mulut') }}>
                                     </td>
                                     <td>
-                                        <input type="number" name="diameter_mulut" id="diameter_mulut" class="form-control" placeholder="CM" step="0.1" min="0">
+                                        <input type="number" name="diameter_mulut" id="diameter_mulut" class="form-control" placeholder="CM" step="0.01" min="0" value={{ old('diameter_mulut') }}>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th colspan="2">Tinggi Keseluruhan</th>
                                     <td colspan="4">
-                                        <input type="number" name="tinggi_keseluruhan" id="tinggi_keseluruhan" class="form-control" placeholder="CM" step="0.1" min="0">
+                                        <input type="number" name="tinggi_keseluruhan" id="tinggi_keseluruhan" class="form-control" placeholder="CM" step="0.01" min="0" value={{ old('tinggi_keseluruhan') }}>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Mata</th>
                                     <td>
-                                        <input type="number" name="panjang_mata" id="panjang_mata" class="form-control" placeholder="CM" step="0.1" min="0">
+                                        <input type="number" name="panjang_mata" id="panjang_mata" class="form-control" placeholder="CM" step="0.01" min="0" value={{ old('panjang_mata') }}>
                                     </td>
                                     <td>
-                                        <input type="number" name="lebar_mata" id="lebar_mata" class="form-control" placeholder="CM" step="0.1" min="0">
+                                        <input type="number" name="lebar_mata" id="lebar_mata" class="form-control" placeholder="CM" step="0.01" min="0" value={{ old('lebar_mata') }}>
                                     </td>
                                     <td>
-                                        <input type="number" name="tinggi_mata" id="tinggi_mata" class="form-control" placeholder="CM" step="0.1" min="0">
+                                        <input type="number" name="tinggi_mata" id="tinggi_mata" class="form-control" placeholder="CM" step="0.01" min="0" value={{ old('tinggi_mata') }}>
                                     </td>
                                     <td>
-                                        <input type="number" name="tebal_mata" id="tebal_mata" class="form-control" placeholder="CM" step="0.1" min="0">
+                                        <input type="number" name="tebal_mata" id="tebal_mata" class="form-control" placeholder="CM" step="0.01" min="0" value={{ old('tebal_mata') }}>
                                     </td>
                                     <td>
-                                        <input type="number" name="diameter_mata" id="diameter_mata" class="form-control" placeholder="CM" step="0.1" min="0">
+                                        <input type="number" name="diameter_mata" id="diameter_mata" class="form-control" placeholder="CM" step="0.01" min="0" value={{ old('diameter_mata') }}>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Tangkai</th>
                                     <td>
-                                        <input type="number" name="panjang_tangkai" id="panjang_tangkai" class="form-control" placeholder="CM" step="0.1" min="0">
+                                        <input type="number" name="panjang_tangkai" id="panjang_tangkai" class="form-control" placeholder="CM" step="0.01" min="0" value={{ old('panjang_tangkai') }}>
                                     </td>
                                     <td>
-                                        <input type="number" name="lebar_tangkai" id="lebar_tangkai" class="form-control" placeholder="CM" step="0.1" min="0">
+                                        <input type="number" name="lebar_tangkai" id="lebar_tangkai" class="form-control" placeholder="CM" step="0.01" min="0" value={{ old('lebar_tangkai') }}>
                                     </td>
                                     <td>
-                                        <input type="number" name="tinggi_tangkai" id="tinggi_tangkai" class="form-control" placeholder="CM" step="0.1" min="0">
+                                        <input type="number" name="tinggi_tangkai" id="tinggi_tangkai" class="form-control" placeholder="CM" step="0.01" min="0" value={{ old('tinggi_tangkai') }}>
                                     </td>
                                     <td>
-                                        <input type="number" name="tebal_tangkai" id="tebal_tangkai" class="form-control" placeholder="CM" step="0.1" min="0">
+                                        <input type="number" name="tebal_tangkai" id="tebal_tangkai" class="form-control" placeholder="CM" step="0.01" min="0" value={{ old('tebal_tangkai') }}>
                                     </td>
                                     <td>
-                                        <input type="number" name="diameter_tangkai" id="diameter_tangkai" class="form-control" placeholder="CM" step="0.1" min="0">
+                                        <input type="number" name="diameter_tangkai" id="diameter_tangkai" class="form-control" placeholder="CM" step="0.01" min="0" value={{ old('diameter_tangkai') }}>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Sarung</th>
                                     <td>
-                                        <input type="number" name="panjang_sarung" id="panjang_sarung" class="form-control" placeholder="CM" step="0.1" min="0">
+                                        <input type="number" name="panjang_sarung" id="panjang_sarung" class="form-control" placeholder="CM" step="0.01" min="0" value={{ old('panjang_sarung') }}>
                                     </td>
                                     <td>
-                                        <input type="number" name="lebar_sarung" id="lebar_sarung" class="form-control" placeholder="CM" step="0.1" min="0">
+                                        <input type="number" name="lebar_sarung" id="lebar_sarung" class="form-control" placeholder="CM" step="0.01" min="0" value={{ old('lebar_sarung') }}>
                                     </td>
                                     <td>
-                                        <input type="number" name="tinggi_sarung" id="tinggi_sarung" class="form-control" placeholder="CM" step="0.1" min="0">
+                                        <input type="number" name="tinggi_sarung" id="tinggi_sarung" class="form-control" placeholder="CM" step="0.01" min="0" value={{ old('tinggi_sarung') }}>
                                     </td>
                                     <td>
-                                        <input type="number" name="tebal_sarung" id="tebal_sarung" class="form-control" placeholder="CM" step="0.1" min="0">
+                                        <input type="number" name="tebal_sarung" id="tebal_sarung" class="form-control" placeholder="CM" step="0.01" min="0" value={{ old('tebal_sarung') }}>
                                     </td>
                                     <td>
-                                        <input type="number" name="diameter_sarung" id="diameter_sarung" class="form-control" placeholder="CM" step="0.1" min="0">
+                                        <input type="number" name="diameter_sarung" id="diameter_sarung" class="form-control" placeholder="CM" step="0.01" min="0" value={{ old('diameter_sarung') }}>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th colspan="2">Panjang Keseluruhan</th>
                                     <td colspan="4">
-                                        <input type="number" name="panjang_keseluruhan" id="panjang_keseluruhan" class="form-control" placeholder="CM" step="0.1" min="0">
+                                        <input type="number" name="panjang_keseluruhan" id="panjang_keseluruhan" class="form-control" placeholder="CM" step="0.01" min="0" value={{ old('panjang_keseluruhan') }}>
                                     </td>
                                 </tr>
                             </table>
@@ -521,6 +532,7 @@
 @push('addon-style')
     <link href="{{ url('backend/assets/modules/bootstrap-datepicker/css/bootstrap-datepicker.min.css') }}" rel="stylesheet" >
     <link href="{{ url('backend/assets/modules/select2/dist/css/select2.min.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ url('css/sweetalert2.min.css') }}">
 @endpush
 
 @push('addon-script')
@@ -598,4 +610,14 @@
             }
         }
     </script>
+    <script src="{{ url('js/sweetalert2.all.min.js') }}"></script>
+    @if(session()->has('error'))
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Gagal',
+                text: '{{ session()->get("error") }}'
+            })
+        </script>
+    @endif
 @endpush

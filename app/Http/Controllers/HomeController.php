@@ -43,7 +43,7 @@ class HomeController extends Controller
             'pesan' => $request->pesan,
         ]);
 
-        return redirect()->route('home')->with('success', 'Terimakasih Sudah Memberi Testimoni');
+        return redirect()->route('home')->with('success', 'Terimakasih Sudah Memberi Ulasan');
     }
 
     public function koleksi($kode)

@@ -14,7 +14,7 @@ class TanggapanController extends Controller
      */
     public function index()
     {
-        $items = Tanggapan::all();
+        $items = Tanggapan::latest('updated_at')->get();
 
         return view('pages.tanggapan.index', [
             'items' => $items

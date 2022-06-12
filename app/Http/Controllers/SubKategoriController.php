@@ -46,7 +46,7 @@ class SubKategoriController extends Controller
     {
         $request->validate([
             'kode' => ['required', 'string', 'max:255', 'unique:sub_kategoris'],
-            'nama' => ['required', 'string', 'max:255'],
+            'nama' => ['required', 'string', 'max:255', 'unique:sub_kategoris'],
             'kategori_kode' => ['required', 'string', 'max:255'],
         ]);
 
@@ -98,13 +98,18 @@ class SubKategoriController extends Controller
         $item = SubKategori::findOrFail($id);
 
         $request->validate([
-            'nama' => ['required', 'string', 'max:255'],
             'kategori_kode' => ['required', 'string', 'max:255'],
         ]);
 
-        if ($item->kode != $request->kode) {
+        if ($item->kode !== $request->kode) {
             $request->validate([
                 'kode' => ['required', 'string', 'max:255', 'unique:sub_kategoris'],
+            ]);
+        }
+
+        if ($item->nama != $request->nama) {
+            $request->validate([
+                'nama' => ['required', 'string', 'max:255', 'unique:sub_kategoris'],
             ]);
         }
 

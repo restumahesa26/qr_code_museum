@@ -14,7 +14,7 @@ class AddFotoToKategorisTable extends Migration
     public function up()
     {
         Schema::table('kategoris', function (Blueprint $table) {
-            $table->string('foto');
+            $table->string('foto')->nullable();
         });
     }
 

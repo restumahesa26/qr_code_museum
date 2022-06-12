@@ -17,6 +17,7 @@ class CreateKoleksisTable extends Migration
             $table->id();
             $table->string('nomor_inventaris');
             $table->string('nama_koleksi');
+            $table->string('nomor_seri')->nullable();
             $table->string('nomor_koleksi_lama_registrasi')->nullable();
             $table->string('nomor_koleksi_lama_inventaris')->nullable();
             $table->string('klasifikasi');

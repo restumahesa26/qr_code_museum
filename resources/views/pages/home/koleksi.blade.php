@@ -11,14 +11,19 @@
             <table class="table table-borderless">
                 <tbody>
                     <tr>
-                        <td style="width: 15%">Nomor Inventaris</td>
+                        <td style="width: 15%">Nomor Inventaris Baru</td>
                         <td style="width: 1%;">:</td>
-                        <td style="width: 84%">{{ $item->klasifikasi }}.{{ $item->nomor_inventaris }}</td>
+                        <td style="width: 84%">{{ $item->nomor_inventaris }}</td>
                     </tr>
                     <tr>
                         <td>Nama Koleksi</td>
                         <td>:</td>
                         <td>{{ $item->nama_koleksi }}</td>
+                    </tr>
+                    <tr>
+                        <td>Nomor Seri</td>
+                        <td>:</td>
+                        <td>{{ $item->nomor_seri != NULL ?  $item->nomor_seri : '-' }}</td>
                     </tr>
                     <tr>
                         <td>Nomor Koleksi Lama</td>
@@ -34,8 +39,7 @@
                     <tr>
                         <td>Nomor Penyimpanan Koleksi</td>
                         <td>:</td>
-                        <td>{{ $item->klasifikasi }}.{{ $item->nomor_inventaris }}
-                            {{ $item->sub_klasifikasi != NULL ? '.' . $item->sub_klasifikasi : '' }}</td>
+                        <td>{{ $item->nomor_penyimpanan }}</td>
                     </tr>
                     <tr>
                         <td>Tanggal Masuk</td>
@@ -45,22 +49,22 @@
                     <tr>
                         <td>Cara Perolehan</td>
                         <td>:</td>
-                        <td>{{ $item->cara_perolehan }}</td>
+                        <td>{{ $item->cara_perolehan != NULL ?  $item->cara_perolehan : '-' }}</td>
                     </tr>
                     <tr>
                         <td>Tempat Perolehan</td>
                         <td>:</td>
-                        <td>{{ $item->tempat_perolehan }}</td>
+                        <td>{{ $item->tempat_perolehan != NULL ?  $item->tempat_perolehan : '-' }}</td>
                     </tr>
                     <tr>
                         <td>Tempat Pembuatan</td>
                         <td>:</td>
-                        <td>{{ $item->tempat_pembuatan }}</td>
+                        <td>{{ $item->tempat_pembuatan != NULL ?  $item->tempat_pembuatan : '-' }}</td>
                     </tr>
                     <tr>
                         <td>Kondisi Koleksi</td>
                         <td>:</td>
-                        <td>{{ $item->kondisi_koleksi }}</td>
+                        <td>{{ $item->kondisi_koleksi != NULL ?  $item->kondisi_koleksi : '-' }}</td>
                     </tr>
                     <tr>
                         <td>Ciri Khusus</td>
@@ -273,7 +277,12 @@
                     <tr>
                         <td>Link Video</td>
                         <td>:</td>
-                        <td><a href="{{ $item->link_video != NULL ?  $item->link_video : '#' }}" target="_blank">Klik ini</a></td>
+                        <td>
+                            @if ($item->link_video !== NULL)
+                            <a href="{{ $item->link_video }}" target="_blank">Klik ini</a>
+                        @else
+                            -
+                        @endif</td>
                     </tr>
                 </tbody>
             </table>
@@ -285,9 +294,9 @@
             <table class="table table-borderless">
                 <tbody>
                     <tr>
-                        <td>Nomor Inventaris</td>
+                        <td>Nomor Inventaris Baru</td>
                         <td>:</td>
-                        <td>{{ $item->klasifikasi }}.{{ $item->nomor_inventaris }}</td>
+                        <td>{{ $item->nomor_inventaris }}</td>
                     </tr>
                     <tr>
                         <td>Nama Koleksi</td>
@@ -308,8 +317,7 @@
                     <tr>
                         <td>Nomor Penyimpanan Koleksi</td>
                         <td>:</td>
-                        <td>{{ $item->klasifikasi }}.{{ $item->nomor_inventaris }}
-                            {{ $item->sub_klasifikasi != NULL ? '.' . $item->sub_klasifikasi : '' }}</td>
+                        <td>{{ $item->nomor_penyimpanan }}</td>
                     </tr>
                     <tr>
                         <td>Tanggal Masuk</td>
@@ -547,7 +555,13 @@
                     <tr>
                         <td>Link Video</td>
                         <td>:</td>
-                        <td><a href="{{ $item->link_video != NULL ?  $item->link_video : '#' }}" target="_blank">Klik ini</a></td>
+                        <td>
+                        @if ($item->link_video !== NULL)
+                            <a href="{{ $item->link_video }}" target="_blank">Klik ini</a>
+                        @else
+                            -
+                        @endif
+                        </td>
                     </tr>
                 </tbody>
             </table>

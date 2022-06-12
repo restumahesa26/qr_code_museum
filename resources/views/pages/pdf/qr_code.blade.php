@@ -9,7 +9,7 @@
 <body>
     <center>
         <h3>{{ $item->nama_koleksi }} - {{ $item->kategori->nama }}</h3>
-        {!! QrCode::size(300)->generate($item->kode_unik); !!}
+        {!! QrCode::size(150)->generate($item->kode_unik); !!}
     </center>
 </body>
 <script>
