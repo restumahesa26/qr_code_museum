@@ -44,7 +44,7 @@
                     <tr>
                         <td>Tanggal Masuk</td>
                         <td>:</td>
-                        <td>{{ App\Helpers\MyHelper::formatTanggal($item->tanggal_masuk) }}</td>
+                        <td>{{ $item->tanggal_masuk != NULL ?  App\Helpers\MyHelper::formatTanggal($item->tanggal_masuk) : '-'  }}</td>
                     </tr>
                     <tr>
                         <td>Cara Perolehan</td>
@@ -208,9 +208,12 @@
                                             </td>
                                         </tr>
                                         <tr class="text-left">
-                                            <th colspan="6">Panjang Keseluruhan :
+                                            <th colspan="3">Panjang Keseluruhan :
                                                 {{ $item->ukuran->panjang_keseluruhan != NULL ?  $item->ukuran->panjang_keseluruhan : '-' }}
                                                 cm</th>
+                                            <th colspan="3">Berat :
+                                                {{ $item->ukuran->berat != NULL ?  $item->ukuran->berat : '-' }}
+                                                gram</th>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -247,7 +250,7 @@
                         <td>:</td>
                         <td>{{ $item->keterangan != NULL ?  $item->keterangan : '-' }}</td>
                     </tr>
-                    @if ($item->judul_naskah != NULL)
+                    @if ($item->judul_naskah != NULL || $item->ukuran_naskah != NULL || $item->jumlah_halaman != NULL || $item->jumlah_baris != NULL || $item->iluminasi != NULL)
                     <tr>
                         <td>Judul Naskah</td>
                         <td>:</td>
@@ -322,7 +325,7 @@
                     <tr>
                         <td>Tanggal Masuk</td>
                         <td>:</td>
-                        <td>{{ App\Helpers\MyHelper::formatTanggal($item->tanggal_masuk) }}</td>
+                        <td>{{ $item->tanggal_masuk != NULL ?  App\Helpers\MyHelper::formatTanggal($item->tanggal_masuk) : '-'  }}</td>
                     </tr>
                     <tr>
                         <td>Cara Perolehan</td>
@@ -489,6 +492,14 @@
                                             <th colspan="6">Panjang Keseluruhan :
                                                 {{ $item->ukuran->panjang_keseluruhan != NULL ?  $item->ukuran->panjang_keseluruhan : '-' }}
                                                 cm</th>
+                                        </tr>
+                                        <tr class="text-left">
+                                            <th colspan="3">Panjang Keseluruhan :
+                                                {{ $item->ukuran->panjang_keseluruhan != NULL ?  $item->ukuran->panjang_keseluruhan : '-' }}
+                                                cm</th>
+                                            <th colspan="3">Berat :
+                                                {{ $item->ukuran->berat != NULL ?  $item->ukuran->berat : '-' }}
+                                                gram</th>
                                         </tr>
                                     </tbody>
                                 </table>

@@ -41,9 +41,9 @@ class CreateKoleksisTable extends Migration
             $table->date('tanggal_pencatatan')->nullable();
             $table->string('keterangan')->nullable();
             $table->string('judul_naskah')->nullable();
-            $table->float('ukuran_naskah')->nullable();
+            $table->string('ukuran_naskah')->nullable();
             $table->string('jumlah_halaman')->nullable();
-            $table->integer('jumlah_baris')->nullable();
+            $table->string('jumlah_baris')->nullable();
             $table->string('iluminasi')->nullable();
             $table->string('kode_unik');
             $table->string('link_video')->nullable();

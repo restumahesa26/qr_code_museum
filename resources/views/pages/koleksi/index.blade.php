@@ -63,9 +63,7 @@
     <script src="{{ url('backend/assets/modules/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js') }}"></script>
     <script>
         $("#dataTable").dataTable({
-            "columnDefs": [
-                { "sortable": false}
-            ]
+            "ordering" : false
         });
     </script>
     <script>

@@ -57,9 +57,7 @@ class KoleksiController extends Controller
             // 'nomor_koleksi_lama_inventaris' => ['required', 'numeric'],
             'klasifikasi' => ['required'],
             'nomor_penyimpanan' => ['required', 'string'],
-            'tanggal_masuk' => ['required', 'date'],
             'cara_perolehan' => ['required', 'string', 'max:255'],
-            'tempat_perolehan' => ['required', 'string', 'max:255'],
             'kondisi_koleksi' => ['required', 'string', 'max:255'],
             // 'ciri_khusus' => ['required', 'string', 'max:255'],
             // 'bahan' => ['required', 'string', 'max:255'],
@@ -70,7 +68,6 @@ class KoleksiController extends Controller
             // 'tempat_pembuatan' => ['required', 'string', 'max:255'],
             // 'fungsi' => ['required', 'string', 'max:255'],
             'tempat_penyimpanan' => ['required', 'string', 'max:255'],
-            'tanggal_pencatatan' => ['required', 'date'],
             // 'keterangan' => ['required', 'string', 'max:255'],
             // 'judul_naskah' => ['required', 'string', 'max:255'],
             // 'ukuran_naskah' => ['required', 'numeric'],
@@ -224,6 +221,7 @@ class KoleksiController extends Controller
                 'tebal_sarung' => $request->tebal_sarung,
                 'diameter_sarung' => $request->diameter_sarung,
                 'panjang_keseluruhan' => $request->panjang_keseluruhan,
+                'berat' => $request->berat,
             ]);
 
             foreach ($foto as $value) {
@@ -281,9 +279,8 @@ class KoleksiController extends Controller
             // 'nomor_koleksi_lama_inventaris' => ['required', 'numeric'],
             'klasifikasi' => ['required'],
             'nomor_penyimpanan' => ['required', 'string'],
-            'tanggal_masuk' => ['required', 'date'],
             'cara_perolehan' => ['required', 'string', 'max:255'],
-            'tempat_perolehan' => ['required', 'string', 'max:255'],
+            'tempat_perolehan' => ['string', 'max:255'],
             'kondisi_koleksi' => ['required', 'string', 'max:255'],
             // 'ciri_khusus' => ['required', 'string', 'max:255'],
             // 'bahan' => ['required', 'string', 'max:255'],
@@ -294,7 +291,6 @@ class KoleksiController extends Controller
             // 'tempat_pembuatan' => ['required', 'string', 'max:255'],
             // 'fungsi' => ['required', 'string', 'max:255'],
             'tempat_penyimpanan' => ['required', 'string', 'max:255'],
-            'tanggal_pencatatan' => ['required', 'date'],
             // 'keterangan' => ['required', 'string', 'max:255'],
             // 'judul_naskah' => ['required', 'string', 'max:255'],
             // 'ukuran_naskah' => ['required', 'numeric'],
@@ -456,6 +452,7 @@ class KoleksiController extends Controller
                 'tebal_sarung' => $request->tebal_sarung,
                 'diameter_sarung' => $request->diameter_sarung,
                 'panjang_keseluruhan' => $request->panjang_keseluruhan,
+                'berat' => $request->berat,
             ]);
 
             if ($request->file('foto')) {
