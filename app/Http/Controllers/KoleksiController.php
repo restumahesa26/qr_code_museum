@@ -280,7 +280,6 @@ class KoleksiController extends Controller
             'klasifikasi' => ['required'],
             'nomor_penyimpanan' => ['required', 'string'],
             'cara_perolehan' => ['required', 'string', 'max:255'],
-            'tempat_perolehan' => ['string', 'max:255'],
             'kondisi_koleksi' => ['required', 'string', 'max:255'],
             // 'ciri_khusus' => ['required', 'string', 'max:255'],
             // 'bahan' => ['required', 'string', 'max:255'],

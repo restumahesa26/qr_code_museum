@@ -497,11 +497,11 @@
                                 <tr>
                                     <th colspan="1">Panjang Keseluruhan</th>
                                     <td colspan="2">
-                                        <input type="number" name="panjang_keseluruhan" id="panjang_keseluruhan" class="form-control" placeholder="CM" step="0.001" min="0" value={{ old('panjang_keseluruhan', $item->panjang_keseluruhan) }}>
+                                        <input type="number" name="panjang_keseluruhan" id="panjang_keseluruhan" class="form-control" placeholder="CM" step="0.001" min="0" value={{ old('panjang_keseluruhan', $item->ukuran->panjang_keseluruhan) }}>
                                     </td>
                                     <th colspan="1">Berat</th>
                                     <td colspan="2">
-                                        <input type="number" name="berat" id="berat" class="form-control" placeholder="GRAM" step="0.001" min="0" value={{ old('berat', $item->berat) }}>
+                                        <input type="number" name="berat" id="berat" class="form-control" placeholder="GRAM" step="0.001" min="0" value={{ old('berat', $item->ukuran->berat) }}>
                                     </td>
                                 </tr>
                             </table>
@@ -598,7 +598,7 @@
                 success: function (response) {
                     if (response != null) {
                         $('select[name="sub_klasifikasi"]').empty();
-                        $('#sub_klasifikasi').append(new Option("-- Pilih Sub Klasifikasi --", ""))
+                        $('#sub_klasifikasi').append(new Option("-- Pilih Sub Kategori --", ""))
                         $.each(response, function (kode, nama) {
                             $('#sub_klasifikasi').append(new Option(nama, kode))
                         });
@@ -618,7 +618,7 @@
                 success: function (response) {
                     if (response != null) {
                         $('select[name="sub_klasifikasi"]').empty();
-                        $('#sub_klasifikasi').append(new Option("-- Pilih Sub Klasifikasi --", ""))
+                        $('#sub_klasifikasi').append(new Option("-- Pilih Sub Kategori --", ""))
                         $.each(response, function (kode, nama) {
                             $('#sub_klasifikasi').append(new Option(nama, kode))
                         });
