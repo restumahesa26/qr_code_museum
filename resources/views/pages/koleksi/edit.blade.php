@@ -365,143 +365,333 @@
                                 <tr>
                                     <th>Ukuran</th>
                                     <td>
-                                        <input type="number" name="panjang_ukuran" id="panjang_ukuran" class="form-control" placeholder="CM" step="0.001" min="0" value="{{ old('panjang_ukuran', $item->ukuran->panjang_ukuran) }}">
+                                        <input type="number" name="panjang_ukuran" id="panjang_ukuran" class="form-control @error('panjang_ukuran') is-invalid @enderror" placeholder="CM" step="0.001" min="0" value="{{ old('panjang_ukuran', $item->ukuran->panjang_ukuran) }}">
+                                        @error('panjang_ukuran')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </td>
                                     <td>
-                                        <input type="number" name="lebar_ukuran" id="lebar_ukuran" class="form-control" placeholder="CM" step="0.001" min="0" value="{{ old('lebar_ukuran', $item->ukuran->lebar_ukuran) }}">
+                                        <input type="number" name="lebar_ukuran" id="lebar_ukuran" class="form-control @error('lebar_ukuran') is-invalid @enderror" placeholder="CM" step="0.001" min="0" value="{{ old('lebar_ukuran', $item->ukuran->lebar_ukuran) }}">
+                                        @error('lebar_ukuran')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </td>
                                     <td>
-                                        <input type="number" name="tinggi_ukuran" id="tinggi_ukuran" class="form-control" placeholder="CM" step="0.001" min="0" value="{{ old('tinggi_ukuran', $item->ukuran->tinggi_ukuran) }}">
+                                        <input type="number" name="tinggi_ukuran" id="tinggi_ukuran" class="form-control @error('tinggi_ukuran') is-invalid @enderror" placeholder="CM" step="0.001" min="0" value="{{ old('tinggi_ukuran', $item->ukuran->tinggi_ukuran) }}">
+                                        @error('tinggi_ukuran')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </td>
                                     <td>
-                                        <input type="number" name="tebal_ukuran" id="tebal_ukuran" class="form-control" placeholder="CM" step="0.001" min="0" value="{{ old('tebal_ukuran', $item->ukuran->tebal_ukuran) }}">
+                                        <input type="number" name="tebal_ukuran" id="tebal_ukuran" class="form-control @error('tebal_ukuran') is-invalid @enderror" placeholder="CM" step="0.001" min="0" value="{{ old('tebal_ukuran', $item->ukuran->tebal_ukuran) }}">
+                                        @error('tebal_ukuran')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </td>
                                     <td>
-                                        <input type="number" name="diameter_ukuran" id="diameter_ukuran" class="form-control" placeholder="CM" step="0.001" min="0" value="{{ old('diameter_ukuran', $item->ukuran->diameter_ukuran) }}">
+                                        <input type="number" name="diameter_ukuran" id="diameter_ukuran" class="form-control @error('diameter_ukuran') is-invalid @enderror" placeholder="CM" step="0.001" min="0" value="{{ old('diameter_ukuran', $item->ukuran->diameter_ukuran) }}">
+                                        @error('diameter_ukuran')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Badan</th>
                                     <td>
-                                        <input type="number" name="panjang_badan" id="panjang_badan" class="form-control" placeholder="CM" step="0.001" min="0" value="{{ old('panjang_badan', $item->ukuran->panjang_badan) }}">
+                                        <input type="number" name="panjang_badan" id="panjang_badan" class="form-control @error('panjang_badan') is-invalid @enderror" placeholder="CM" step="0.001" min="0" value="{{ old('panjang_badan', $item->ukuran->panjang_badan) }}">
+                                        @error('panjang_badan')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </td>
                                     <td>
-                                        <input type="number" name="lebar_badan" id="lebar_badan" class="form-control" placeholder="CM" step="0.001" min="0" value="{{ old('lebar_badan', $item->ukuran->lebar_badan) }}">
+                                        <input type="number" name="lebar_badan" id="lebar_badan" class="form-control @error('lebar_badan') is-invalid @enderror" placeholder="CM" step="0.001" min="0" value="{{ old('lebar_badan', $item->ukuran->lebar_badan) }}">
+                                        @error('lebar_badan')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </td>
                                     <td>
-                                        <input type="number" name="tinggi_badan" id="tinggi_badan" class="form-control" placeholder="CM" step="0.001" min="0" value="{{ old('tinggi_badan', $item->ukuran->tinggi_badan) }}">
+                                        <input type="number" name="tinggi_badan" id="tinggi_badan" class="form-control @error('tinggi_badan') is-invalid @enderror" placeholder="CM" step="0.001" min="0" value="{{ old('tinggi_badan', $item->ukuran->tinggi_badan) }}">
+                                        @error('tinggi_badan')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </td>
                                     <td>
-                                        <input type="number" name="tebal_badan" id="tebal_badan" class="form-control" placeholder="CM" step="0.001" min="0" value="{{ old('tebal_badan', $item->ukuran->tebal_badan) }}">
+                                        <input type="number" name="tebal_badan" id="tebal_badan" class="form-control @error('tebal_badan') is-invalid @enderror" placeholder="CM" step="0.001" min="0" value="{{ old('tebal_badan', $item->ukuran->tebal_badan) }}">
+                                        @error('tebal_badan')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </td>
                                     <td>
-                                        <input type="number" name="diameter_badan" id="diameter_badan" class="form-control" placeholder="CM" step="0.001" min="0" value="{{ old('diameter_badan', $item->ukuran->diameter_badan) }}">
+                                        <input type="number" name="diameter_badan" id="diameter_badan" class="form-control @error('diameter_badan') is-invalid @enderror" placeholder="CM" step="0.001" min="0" value="{{ old('diameter_badan', $item->ukuran->diameter_badan) }}">
+                                        @error('diameter_badan')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Alas</th>
                                     <td>
-                                        <input type="number" name="panjang_alas" id="panjang_alas" class="form-control" placeholder="CM" step="0.001" min="0" value="{{ old('panjang_alas', $item->ukuran->panjang_alas) }}">
+                                        <input type="number" name="panjang_alas" id="panjang_alas" class="form-control @error('panjang_alas') is-invalid @enderror" placeholder="CM" step="0.001" min="0" value="{{ old('panjang_alas', $item->ukuran->panjang_alas) }}">
+                                        @error('panjang_alas')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </td>
                                     <td>
-                                        <input type="number" name="lebar_alas" id="lebar_alas" class="form-control" placeholder="CM" step="0.001" min="0" value="{{ old('lebar_alas', $item->ukuran->lebar_alas) }}">
+                                        <input type="number" name="lebar_alas" id="lebar_alas" class="form-control @error('lebar_alas') is-invalid @enderror" placeholder="CM" step="0.001" min="0" value="{{ old('lebar_alas', $item->ukuran->lebar_alas) }}">
+                                        @error('lebar_alas')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </td>
                                     <td>
-                                        <input type="number" name="tinggi_alas" id="tinggi_alas" class="form-control" placeholder="CM" step="0.001" min="0" value="{{ old('tinggi_alas', $item->ukuran->tinggi_alas) }}">
+                                        <input type="number" name="tinggi_alas" id="tinggi_alas" class="form-control @error('tinggi_alas') is-invalid @enderror" placeholder="CM" step="0.001" min="0" value="{{ old('tinggi_alas', $item->ukuran->tinggi_alas) }}">
+                                        @error('tinggi_alas')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </td>
                                     <td>
-                                        <input type="number" name="tebal_alas" id="tebal_alas" class="form-control" placeholder="CM" step="0.001" min="0" value="{{ old('tebal_alas', $item->ukuran->tebal_alas) }}">
+                                        <input type="number" name="tebal_alas" id="tebal_alas" class="form-control @error('tebal_alas') is-invalid @enderror" placeholder="CM" step="0.001" min="0" value="{{ old('tebal_alas', $item->ukuran->tebal_alas) }}">
+                                        @error('tebal_alas')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </td>
                                     <td>
-                                        <input type="number" name="diameter_alas" id="diameter_alas" class="form-control" placeholder="CM" step="0.001" min="0" value="{{ old('diameter_alas', $item->ukuran->diameter_alas) }}">
+                                        <input type="number" name="diameter_alas" id="diameter_alas" class="form-control @error('diameter_alas') is-invalid @enderror" placeholder="CM" step="0.001" min="0" value="{{ old('diameter_alas', $item->ukuran->diameter_alas) }}">
+                                        @error('diameter_alas')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Mulut / Bibir</th>
                                     <td>
-                                        <input type="number" name="panjang_mulut" id="panjang_mulut" class="form-control" placeholder="CM" step="0.001" min="0" value="{{ old('panjang_mulut', $item->ukuran->panjang_mulut) }}">
+                                        <input type="number" name="panjang_mulut" id="panjang_mulut" class="form-control @error('panjang_mulut') is-invalid @enderror" placeholder="CM" step="0.001" min="0" value="{{ old('panjang_mulut', $item->ukuran->panjang_mulut) }}">
+                                        @error('panjang_mulut')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </td>
                                     <td>
-                                        <input type="number" name="lebar_mulut" id="lebar_mulut" class="form-control" placeholder="CM" step="0.001" min="0" value="{{ old('lebar_mulut', $item->ukuran->lebar_mulut) }}">
+                                        <input type="number" name="lebar_mulut" id="lebar_mulut" class="form-control @error('lebar_mulut') is-invalid @enderror" placeholder="CM" step="0.001" min="0" value="{{ old('lebar_mulut', $item->ukuran->lebar_mulut) }}">
+                                        @error('lebar_mulut')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </td>
                                     <td>
-                                        <input type="number" name="tinggi_mulut" id="tinggi_mulut" class="form-control" placeholder="CM" step="0.001" min="0" value="{{ old('tinggi_mulut', $item->ukuran->tinggi_mulut) }}">
+                                        <input type="number" name="tinggi_mulut" id="tinggi_mulut" class="form-control @error('tinggi_mulut') is-invalid @enderror" placeholder="CM" step="0.001" min="0" value="{{ old('tinggi_mulut', $item->ukuran->tinggi_mulut) }}">
+                                        @error('tinggi_mulut')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </td>
                                     <td>
-                                        <input type="number" name="tebal_mulut" id="tebal_mulut" class="form-control" placeholder="CM" step="0.001" min="0" value="{{ old('tebal_mulut', $item->ukuran->tebal_mulut) }}">
+                                        <input type="number" name="tebal_mulut" id="tebal_mulut" class="form-control @error('tebal_mulut') is-invalid @enderror" placeholder="CM" step="0.001" min="0" value="{{ old('tebal_mulut', $item->ukuran->tebal_mulut) }}">
+                                        @error('tebal_mulut')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </td>
                                     <td>
-                                        <input type="number" name="diameter_mulut" id="diameter_mulut" class="form-control" placeholder="CM" step="0.001" min="0" value="{{ old('diameter_mulut', $item->ukuran->diameter_mulut) }}">
+                                        <input type="number" name="diameter_mulut" id="diameter_mulut" class="form-control @error('diameter_mulut') is-invalid @enderror" placeholder="CM" step="0.001" min="0" value="{{ old('diameter_mulut', $item->ukuran->diameter_mulut) }}">
+                                        @error('diameter_mulut')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </td>
                                 </tr>
                                 <tr>
                                     <th colspan="2">Tinggi Keseluruhan</th>
                                     <td colspan="4">
-                                        <input type="number" name="tinggi_keseluruhan" id="tinggi_keseluruhan" class="form-control" placeholder="CM" step="0.001" min="0" value="{{ old('tinggi_keseluruhan', $item->ukuran->tinggi_keseluruhan) }}">
+                                        <input type="number" name="tinggi_keseluruhan" id="tinggi_keseluruhan" class="form-control @error('tinggi_keseluruhan') is-invalid @enderror" placeholder="CM" step="0.001" min="0" value="{{ old('tinggi_keseluruhan', $item->ukuran->tinggi_keseluruhan) }}">
+                                        @error('tinggi_keseluruhan')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Mata</th>
                                     <td>
-                                        <input type="number" name="panjang_mata" id="panjang_mata" class="form-control" placeholder="CM" step="0.001" min="0" value="{{ old('panjang_mata', $item->ukuran->panjang_mata) }}">
+                                        <input type="number" name="panjang_mata" id="panjang_mata" class="form-control @error('panjang_mata') is-invalid @enderror" placeholder="CM" step="0.001" min="0" value="{{ old('panjang_mata', $item->ukuran->panjang_mata) }}">
+                                        @error('panjang_mata')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </td>
                                     <td>
-                                        <input type="number" name="lebar_mata" id="lebar_mata" class="form-control" placeholder="CM" step="0.001" min="0" value="{{ old('lebar_mata', $item->ukuran->lebar_mata) }}">
+                                        <input type="number" name="lebar_mata" id="lebar_mata" class="form-control @error('lebar_mata') is-invalid @enderror" placeholder="CM" step="0.001" min="0" value="{{ old('lebar_mata', $item->ukuran->lebar_mata) }}">
+                                        @error('lebar_mata')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </td>
                                     <td>
-                                        <input type="number" name="tinggi_mata" id="tinggi_mata" class="form-control" placeholder="CM" step="0.001" min="0" value="{{ old('tinggi_mata', $item->ukuran->tinggi_mata) }}">
+                                        <input type="number" name="tinggi_mata" id="tinggi_mata" class="form-control @error('tinggi_mata') is-invalid @enderror" placeholder="CM" step="0.001" min="0" value="{{ old('tinggi_mata', $item->ukuran->tinggi_mata) }}">
+                                        @error('tinggi_mata')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </td>
                                     <td>
-                                        <input type="number" name="tebal_mata" id="tebal_mata" class="form-control" placeholder="CM" step="0.001" min="0" value="{{ old('tebal_mata', $item->ukuran->tebal_mata) }}">
+                                        <input type="number" name="tebal_mata" id="tebal_mata" class="form-control @error('tebal_mata') is-invalid @enderror" placeholder="CM" step="0.001" min="0" value="{{ old('tebal_mata', $item->ukuran->tebal_mata) }}">
+                                        @error('tebal_mata')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </td>
                                     <td>
-                                        <input type="number" name="diameter_mata" id="diameter_mata" class="form-control" placeholder="CM" step="0.001" min="0" value="{{ old('diameter_mata', $item->ukuran->diameter_mata) }}">
+                                        <input type="number" name="diameter_mata" id="diameter_mata" class="form-control @error('diameter_mata') is-invalid @enderror" placeholder="CM" step="0.001" min="0" value="{{ old('diameter_mata', $item->ukuran->diameter_mata) }}">
+                                        @error('diameter_mata')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Tangkai</th>
                                     <td>
-                                        <input type="number" name="panjang_tangkai" id="panjang_tangkai" class="form-control" placeholder="CM" step="0.001" min="0" value="{{ old('panjang_tangkai', $item->ukuran->panjang_tangkai) }}">
+                                        <input type="number" name="panjang_tangkai" id="panjang_tangkai" class="form-control @error('panjang_tangkai') is-invalid @enderror" placeholder="CM" step="0.001" min="0" value="{{ old('panjang_tangkai', $item->ukuran->panjang_tangkai) }}">
+                                        @error('panjang_tangkai')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </td>
                                     <td>
-                                        <input type="number" name="lebar_tangkai" id="lebar_tangkai" class="form-control" placeholder="CM" step="0.001" min="0" value="{{ old('lebar_tangkai', $item->ukuran->lebar_tangkai) }}">
+                                        <input type="number" name="lebar_tangkai" id="lebar_tangkai" class="form-control @error('lebar_tangkai') is-invalid @enderror" placeholder="CM" step="0.001" min="0" value="{{ old('lebar_tangkai', $item->ukuran->lebar_tangkai) }}">
+                                        @error('lebar_tangkai')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </td>
                                     <td>
-                                        <input type="number" name="tinggi_tangkai" id="tinggi_tangkai" class="form-control" placeholder="CM" step="0.001" min="0" value="{{ old('tinggi_tangkai', $item->ukuran->tinggi_tangkai) }}">
+                                        <input type="number" name="tinggi_tangkai" id="tinggi_tangkai" class="form-control @error('tinggi_tangkai') is-invalid @enderror" placeholder="CM" step="0.001" min="0" value="{{ old('tinggi_tangkai', $item->ukuran->tinggi_tangkai) }}">
+                                        @error('tinggi_tangkai')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </td>
                                     <td>
-                                        <input type="number" name="tebal_tangkai" id="tebal_tangkai" class="form-control" placeholder="CM" step="0.001" min="0" value="{{ old('tebal_tangkai', $item->ukuran->tebal_tangkai) }}">
+                                        <input type="number" name="tebal_tangkai" id="tebal_tangkai" class="form-control @error('tebal_tangkai') is-invalid @enderror" placeholder="CM" step="0.001" min="0" value="{{ old('tebal_tangkai', $item->ukuran->tebal_tangkai) }}">
+                                        @error('tebal_tangkai')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </td>
                                     <td>
-                                        <input type="number" name="diameter_tangkai" id="diameter_tangkai" class="form-control" placeholder="CM" step="0.001" min="0" value="{{ old('diameter_tangkai', $item->ukuran->diameter_tangkai) }}">
+                                        <input type="number" name="diameter_tangkai" id="diameter_tangkai" class="form-control @error('diameter_tangkai') is-invalid @enderror" placeholder="CM" step="0.001" min="0" value="{{ old('diameter_tangkai', $item->ukuran->diameter_tangkai) }}">
+                                        @error('diameter_tangkai')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Sarung</th>
                                     <td>
-                                        <input type="number" name="panjang_sarung" id="panjang_sarung" class="form-control" placeholder="CM" step="0.001" min="0" value="{{ old('panjang_sarung', $item->ukuran->panjang_sarung) }}">
+                                        <input type="number" name="panjang_sarung" id="panjang_sarung" class="form-control @error('panjang_sarung') is-invalid @enderror" placeholder="CM" step="0.001" min="0" value="{{ old('panjang_sarung', $item->ukuran->panjang_sarung) }}">
+                                        @error('panjang_sarung')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </td>
                                     <td>
-                                        <input type="number" name="lebar_sarung" id="lebar_sarung" class="form-control" placeholder="CM" step="0.001" min="0" value="{{ old('lebar_sarung', $item->ukuran->lebar_sarung) }}">
+                                        <input type="number" name="lebar_sarung" id="lebar_sarung" class="form-control @error('lebar_sarung') is-invalid @enderror" placeholder="CM" step="0.001" min="0" value="{{ old('lebar_sarung', $item->ukuran->lebar_sarung) }}">
+                                        @error('lebar_sarung')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </td>
                                     <td>
-                                        <input type="number" name="tinggi_sarung" id="tinggi_sarung" class="form-control" placeholder="CM" step="0.001" min="0" value="{{ old('tinggi_sarung', $item->ukuran->tinggi_sarung) }}">
+                                        <input type="number" name="tinggi_sarung" id="tinggi_sarung" class="form-control @error('tinggi_sarung') is-invalid @enderror" placeholder="CM" step="0.001" min="0" value="{{ old('tinggi_sarung', $item->ukuran->tinggi_sarung) }}">
+                                        @error('tinggi_sarung')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </td>
                                     <td>
-                                        <input type="number" name="tebal_sarung" id="tebal_sarung" class="form-control" placeholder="CM" step="0.001" min="0" value="{{ old('tebal_sarung', $item->ukuran->tebal_sarung) }}">
+                                        <input type="number" name="tebal_sarung" id="tebal_sarung" class="form-control @error('tebal_sarung') is-invalid @enderror" placeholder="CM" step="0.001" min="0" value="{{ old('tebal_sarung', $item->ukuran->tebal_sarung) }}">
+                                        @error('tebal_sarung')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </td>
                                     <td>
-                                        <input type="number" name="diameter_sarung" id="diameter_sarung" class="form-control" placeholder="CM" step="0.001" min="0" value="{{ old('diameter_sarung', $item->ukuran->diameter_sarung) }}">
+                                        <input type="number" name="diameter_sarung" id="diameter_sarung" class="form-control @error('diameter_sarung') is-invalid @enderror" placeholder="CM" step="0.001" min="0" value="{{ old('diameter_sarung', $item->ukuran->diameter_sarung) }}">
+                                        @error('diameter_sarung')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </td>
                                 </tr>
                                 <tr>
                                     <th colspan="1">Panjang Keseluruhan</th>
                                     <td colspan="2">
-                                        <input type="number" name="panjang_keseluruhan" id="panjang_keseluruhan" class="form-control" placeholder="CM" step="0.001" min="0" value={{ old('panjang_keseluruhan', $item->ukuran->panjang_keseluruhan) }}>
+                                        <input type="number" name="panjang_keseluruhan" id="panjang_keseluruhan" class="form-control @error('panjang_keseluruhan') is-invalid @enderror" placeholder="CM" step="0.001" min="0" value={{ old('panjang_keseluruhan', $item->ukuran->panjang_keseluruhan) }}>
+                                        @error('panjang_keseluruhan')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </td>
                                     <th colspan="1">Berat</th>
                                     <td colspan="2">
-                                        <input type="number" name="berat" id="berat" class="form-control" placeholder="GRAM" step="0.001" min="0" value={{ old('berat', $item->ukuran->berat) }}>
+                                        <input type="number" name="berat" id="berat" class="form-control @error('berat') is-invalid @enderror" placeholder="GRAM" step="0.001" min="0" value={{ old('berat', $item->ukuran->berat) }}>
+                                        @error('berat')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </td>
                                 </tr>
                             </table>
