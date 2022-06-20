@@ -16,7 +16,7 @@
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="nomor_inventaris">Nomor Inventaris Baru</label>
-                                <input type="number" class="form-control @error('nomor_inventaris') is-invalid @enderror" id="nomor_inventaris" name="nomor_inventaris" placeholder="Masukkan Nomor Inventaris Baru" value="{{ old('nomor_inventaris', $item->nomor_inventaris) }}" required>
+                                <input type="text" class="form-control @error('nomor_inventaris') is-invalid @enderror" id="nomor_inventaris" name="nomor_inventaris" placeholder="Masukkan Nomor Inventaris Baru" value="{{ old('nomor_inventaris', $item->nomor_inventaris) }}" required>
                                 @error('nomor_inventaris')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
