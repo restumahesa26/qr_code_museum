@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 
@@ -128,8 +129,12 @@ class PenggunaController extends Controller
     {
         $item = User::findOrFail($id);
 
-        $item->delete();
+        if (Auth::user()->id == $item->id) {
+            return redirect()->back()->with('error', 'Gagal Menghapus Pengguna');
+        }else {
+            $item->delete();
 
-        return redirect()->route('data-pengguna.index')->with('success', 'Berhasil Menghapus Pengguna');
+            return redirect()->route('data-pengguna.index')->with('success', 'Berhasil Menghapus Pengguna');
+        }
     }
 }

@@ -91,4 +91,13 @@
         })
     </script>
     @endif
+    @if(session()->has('error'))
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Gagal',
+            text: '{{ session()->get("error") }}'
+        })
+    </script>
+    @endif
 @endpush
