@@ -51,7 +51,7 @@ class KoleksiController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nomor_inventaris' => ['required', 'numeric'],
+            'nomor_inventaris' => ['required', 'numeric', 'max:8'],
             'nama_koleksi' => ['required', 'string', 'max:50'],
             'nomor_koleksi_lama_registrasi' => ['nullable', 'string', 'max:12'],
             'nomor_koleksi_lama_inventaris' => ['nullable', 'string', 'max:12'],
@@ -60,6 +60,7 @@ class KoleksiController extends Controller
             'cara_perolehan' => ['required', 'string', 'max:30'],
             'kondisi_koleksi' => ['required', 'string', 'max:20'],
             'ciri_khusus' => ['nullable', 'string', 'max:50'],
+            'nomor_seri' => ['nullable', 'string', 'max:12'],
             'bahan' => ['nullable', 'string', 'max:20'],
             'warna' => ['nullable', 'string', 'max:30'],
             'motif' => ['nullable', 'string', 'max:35'],
@@ -274,7 +275,7 @@ class KoleksiController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'nomor_inventaris' => ['required', 'numeric'],
+            'nomor_inventaris' => ['required', 'numeric', 'max:8'],
             'nama_koleksi' => ['required', 'string', 'max:50'],
             'nomor_koleksi_lama_registrasi' => ['nullable', 'string', 'max:12'],
             'nomor_koleksi_lama_inventaris' => ['nullable', 'string', 'max:12'],
@@ -284,6 +285,7 @@ class KoleksiController extends Controller
             'kondisi_koleksi' => ['required', 'string', 'max:20'],
             'ciri_khusus' => ['nullable', 'string', 'max:50'],
             'bahan' => ['nullable', 'string', 'max:20'],
+            'nomor_seri' => ['nullable', 'string', 'max:12'],
             'warna' => ['nullable', 'string', 'max:30'],
             'motif' => ['nullable', 'string', 'max:35'],
             'dekorasi' => ['nullable', 'string', 'max:30'],
