@@ -13,7 +13,7 @@
                     <tr>
                         <td style="width: 15%">Nomor Inventaris Baru</td>
                         <td style="width: 1%;">:</td>
-                        <td style="width: 84%">{{ $item->nomor_inventaris }}</td>
+                        <td style="width: 84%">{{ $item->klasifikasi }}.{{ $item->nomor_inventaris }}</td>
                     </tr>
                     <tr>
                         <td>Nama Koleksi</td>
@@ -32,7 +32,7 @@
                             {{ $item->nomor_koleksi_lama_inventaris }}</td>
                     </tr>
                     <tr>
-                        <td>Klasifikasi</td>
+                        <td>Kategori</td>
                         <td>:</td>
                         <td>{{ $item->kategori->nama }}</td>
                     </tr>
@@ -299,7 +299,7 @@
                     <tr>
                         <td>Nomor Inventaris Baru</td>
                         <td>:</td>
-                        <td>{{ $item->nomor_inventaris }}</td>
+                        <td>{{ $item->klasifikasi }}.{{ $item->nomor_inventaris }}</td>
                     </tr>
                     <tr>
                         <td>Nama Koleksi</td>
@@ -313,7 +313,7 @@
                             {{ $item->nomor_koleksi_lama_inventaris }}</td>
                     </tr>
                     <tr>
-                        <td>Klasifikasi</td>
+                        <td>Kategori</td>
                         <td>:</td>
                         <td>{{ $item->kategori->nama }}</td>
                     </tr>

@@ -15,10 +15,10 @@ class CreateTanggapansTable extends Migration
     {
         Schema::create('tanggapans', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
+            $table->string('nama', 50);
             $table->string('pesan');
-            $table->string('email');
-            $table->string('no_telepon');
+            $table->string('email', 50);
+            $table->string('no_telepon', 15);
             $table->enum('status', ['0','1'])->default('0');
             $table->timestamps();
         });

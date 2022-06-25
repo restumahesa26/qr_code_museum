@@ -43,9 +43,9 @@ class PenggunaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama' => ['required', 'string', 'max:255'],
-            'username' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255'],
+            'nama' => ['required', 'string', 'max:50'],
+            'username' => ['required', 'string', 'max:30'],
+            'email' => ['required', 'string', 'email', 'max:50'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 

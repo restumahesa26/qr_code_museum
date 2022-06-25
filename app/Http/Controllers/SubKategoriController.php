@@ -45,9 +45,9 @@ class SubKategoriController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'kode' => ['required', 'string', 'max:255', 'unique:sub_kategoris'],
-            'nama' => ['required', 'string', 'max:255', 'unique:sub_kategoris'],
-            'kategori_kode' => ['required', 'string', 'max:255'],
+            'kode' => ['required', 'string', 'max:8', 'unique:sub_kategoris'],
+            'nama' => ['required', 'string', 'max:30', 'unique:sub_kategoris'],
+            'kategori_kode' => ['required', 'string', 'max:8'],
         ]);
 
         SubKategori::create([
@@ -98,18 +98,18 @@ class SubKategoriController extends Controller
         $item = SubKategori::findOrFail($id);
 
         $request->validate([
-            'kategori_kode' => ['required', 'string', 'max:255'],
+            'kategori_kode' => ['required', 'string', 'max:8'],
         ]);
 
         if ($item->kode !== $request->kode) {
             $request->validate([
-                'kode' => ['required', 'string', 'max:255', 'unique:sub_kategoris'],
+                'kode' => ['required', 'string', 'max:8', 'unique:sub_kategoris'],
             ]);
         }
 
         if ($item->nama != $request->nama) {
             $request->validate([
-                'nama' => ['required', 'string', 'max:255', 'unique:sub_kategoris'],
+                'nama' => ['required', 'string', 'max:30', 'unique:sub_kategoris'],
             ]);
         }
 

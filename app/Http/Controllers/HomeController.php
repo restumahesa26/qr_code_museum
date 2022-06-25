@@ -30,9 +30,9 @@ class HomeController extends Controller
     public function send_testimony(Request $request)
     {
         $request->validate([
-            'nama' => ['required', 'string', 'max:255'],
-            'no_telepon' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'max:255', 'email'],
+            'nama' => ['required', 'string', 'max:50'],
+            'no_telepon' => ['required', 'string', 'max:15'],
+            'email' => ['required', 'string', 'max:50', 'email'],
             'pesan' => ['required', 'string', 'max:255'],
         ]);
 

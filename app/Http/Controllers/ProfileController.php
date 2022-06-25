@@ -22,9 +22,9 @@ class ProfileController extends Controller
 
         // Membuat validasi inputan
         $request->validate([
-            'nama' => ['required', 'string', 'max:255'],
-            'username' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255'],
+            'nama' => ['required', 'string', 'max:50'],
+            'username' => ['required', 'string', 'max:30'],
+            'email' => ['required', 'string', 'email', 'max:50'],
         ]);
 
         // Membuat sebuah perkondisian apabila password tidak diubah

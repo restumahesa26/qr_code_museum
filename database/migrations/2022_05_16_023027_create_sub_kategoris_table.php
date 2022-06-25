@@ -14,9 +14,9 @@ class CreateSubKategorisTable extends Migration
     public function up()
     {
         Schema::create('sub_kategoris', function (Blueprint $table) {
-            $table->string('kode')->primary();
-            $table->string('kategori_kode');
-            $table->string('nama');
+            $table->string('kode', 8)->primary();
+            $table->string('kategori_kode', 8);
+            $table->string('nama', 30);
             $table->foreign('kategori_kode')->references('kode')->on('kategoris')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });

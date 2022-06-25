@@ -42,8 +42,8 @@ class KategoriController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'kode' => ['required', 'string', 'max:255', 'unique:kategoris'],
-            'nama' => ['required', 'string', 'max:255', 'unique:kategoris'],
+            'kode' => ['required', 'string', 'max:8', 'unique:kategoris'],
+            'nama' => ['required', 'string', 'max:30', 'unique:kategoris'],
             'foto' => ['required', 'mimes:png,jpg'],
         ]);
 
@@ -101,12 +101,12 @@ class KategoriController extends Controller
 
         if ($item->kode !== $request->kode) {
             $request->validate([
-                'kode' => ['required', 'string', 'max:255', 'unique:kategoris'],
+                'kode' => ['required', 'string', 'max:8', 'unique:kategoris'],
             ]);
         }
         if ($item->nama != $request->nama) {
             $request->validate([
-                'nama' => ['required', 'string', 'max:255', 'unique:kategoris'],
+                'nama' => ['required', 'string', 'max:30', 'unique:kategoris'],
             ]);
         }
         if ($request->foto) {
